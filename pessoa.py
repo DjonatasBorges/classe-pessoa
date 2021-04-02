@@ -17,53 +17,44 @@ class Pessoa:
         self.falando = falando
 
     def comer(self, alimento):
-        if self.falando == True:
+        if self.falando:
             print(f'{self.nome} está falando e por isso não pode comer.')
-            return
-        if self.comendo == False:
+
+        elif not self.comendo:
             print(f'{self.nome} começou a comer {alimento}')
             self.comendo = True
-            return
+
         else:
             print(f'{self.nome} já esta comendo')
-            return
 
     def falar(self, assunto):
-        if self.comendo == True:
+        if self.comendo:
             print(f'{self.nome} está comendo e por isso não pode falar.')
-            return
-        if self.falando == False:
+
+        elif not self.falando:
             print(f'{self.nome} começou a falar sobre {assunto}')
             self.falando = True
-            return
 
         else:
             print(f'{self.nome} já esta falando.')
-            return
 
     def parar_comer(self):
-        if self.falando == True:
+        if self.falando:
             print(f'{self.nome} já não está comendo porque esta falando.')
-            return
-        if self.comendo == False:
+        elif not self.comendo:
             print(f'{self.nome} não esta comendo')
-            return
         else:
             print(f'{self.nome} parou de comer.')
             self.comendo = False
-            return
 
     def parar_falar(self):
-        if self.comendo == True:
+        if self.comendo:
             print(f'{self.nome} já não está falando porque esta comendo')
-            return
-        if self.falando == False:
+        elif not self.falando:
             print(f'{self.nome} não esta falando')
-            return
         else:
             print(f'{self.nome} parou de falar.')
             self.falando = False
-            return
 
 
 p1 = Pessoa('Djonatas', 'Borges', 'Masculino', 30)
